@@ -18,6 +18,84 @@ const state = {
   itemSearchQuery: ''
 };
 
+/**
+ * 客户端环境智能识别
+ */
+const Device = {
+  isMobile() {
+    const ua = navigator.userAgent || '';
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua) ||
+           (window.innerWidth <= 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
+  },
+  isIOS() {
+    return /iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+  },
+  isAndroid() {
+    return /Android/i.test(navigator.userAgent || '');
+  },
+  isWeChat() {
+    return /MicroMessenger/i.test(navigator.userAgent || '');
+  }
+};
+
+/**
+ * 智能打开闲鱼（移动端优先调起 App，支持 Android Intent 与 iOS Scheme，未安装自动降级为浏览器）
+ */
+function openXianyuItem(itemId, fallbackWebUrl, e) {
+  if (e && e.stopPropagation) {
+    e.stopPropagation();
+  }
+
+  const h5Url = fallbackWebUrl || `https://www.goofish.com/item?id=${itemId}`;
+
+  if (!Device.isMobile()) {
+    // 桌面端环境：直接打开新标签页访问网页版
+    window.open(h5Url, '_blank', 'noopener,noreferrer');
+    return;
+  }
+
+  // 微信内置浏览器防拦截引导
+  if (Device.isWeChat()) {
+    showToast('💡 微信已拦截外部跳转，请点击右上角选择【在默认浏览器打开】即可直达闲鱼 App');
+    setTimeout(() => {
+      window.location.href = h5Url;
+    }, 1200);
+    return;
+  }
+
+  showToast('🚀 正在尝试调起闲鱼 App...');
+
+  // 闲鱼常用协议
+  const primaryScheme = `fleamarket://itemDetail?itemId=${itemId}`;
+
+  if (Device.isAndroid()) {
+    // Android 端：使用 Chrome Intent 协议规范，未安装自动跳转 S.browser_fallback_url
+    const androidIntent = `intent://itemDetail?itemId=${itemId}#Intent;scheme=fleamarket;package=com.taobao.idlefish;S.browser_fallback_url=${encodeURIComponent(h5Url)};end`;
+    const start = Date.now();
+    window.location.href = androidIntent;
+
+    setTimeout(() => {
+      if (Date.now() - start < 2000 && !document.hidden) {
+        window.location.href = h5Url;
+      }
+    }, 1500);
+  } else if (Device.isIOS()) {
+    // iOS 端（如 iPhone 11）：通过 fleamarket:// 协议直接唤起闲鱼 App
+    const start = Date.now();
+    window.location.href = primaryScheme;
+
+    // 兜底定时器：若 1.6 秒后仍在当前前台页面（说明未安装或用户取消），自动用浏览器打开网页版
+    setTimeout(() => {
+      const elapsed = Date.now() - start;
+      if (elapsed < 2200 && !document.hidden) {
+        window.location.href = h5Url;
+      }
+    }, 1600);
+  } else {
+    window.location.href = h5Url;
+  }
+}
+
 // DOM 初始化入口
 document.addEventListener('DOMContentLoaded', () => {
   initUrlHash();
@@ -406,7 +484,9 @@ function renderWaterfallItems() {
 
           <div class="item-card-footer">
             <span class="item-model-pill">${modelName}</span>
-            <span class="btn-item-link">查看详情 & 闲鱼购买 ↗</span>
+            <span class="btn-item-link" onclick="openXianyuItem('${item.id}', '${item.url}', event)" title="直接前往闲鱼查看">
+              ${Device.isMobile() ? '调起闲鱼 ↗' : '闲鱼直达 ↗'}
+            </span>
           </div>
         </div>
       </article>
@@ -635,10 +715,11 @@ function openItemModal(itemId) {
       </div>
 
       <div class="modal-footer">
-        <button class="btn-secondary" onclick="copyItemLink('${item.url}')">复制闲鱼链接 📋</button>
-        <a class="btn-primary" href="${item.url}" target="_blank" rel="noopener noreferrer">
-          前往闲鱼查看 / 购买 ↗
-        </a>
+        <button class="btn-secondary" onclick="copyItemLink('${item.url}')">复制链接 📋</button>
+        <button class="btn-secondary" onclick="window.open('${item.url}', '_blank', 'noopener,noreferrer')">浏览器打开 🌐</button>
+        <button class="btn-primary" onclick="openXianyuItem('${item.id}', '${item.url}', event)">
+          ${Device.isMobile() ? '🚀 调起闲鱼 App' : '前往闲鱼查看 / 购买 ↗'}
+        </button>
       </div>
     </div>
   `;
