@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>好孩子 / gb 中高端二手婴儿车选购指南 · 长沙闲鱼精选车源</title>
+  <meta name="description" content="好孩子/gb国产婴儿车中高端二手选购全景指南。收录Swan金羽GB826、安全舱2号E5011、蜂鸟C826、ORSA及POCKIT口袋车全参数与卖点，汇聚长沙本地21辆闲鱼真实精选车源，附避坑黑榜与现场验车指南。" />
+  <meta name="keywords" content="好孩子二手婴儿车,gb推车,长沙闲鱼二手推车,GB826,E5011,蜂鸟C826,POCKIT口袋车,婴儿车选购指南" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 顶部导航栏 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <div class="brand-icon">🍼</div>
+        <div class="brand-text">
+          <h1>好孩子 / gb 婴儿车指南 <span class="badge-location">📍 长沙精选</span></h1>
+          <div class="brand-subtitle">
+            <span>中高端二手选购</span> · <span>淘车避坑速查</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 双 Tab 切换控制器 -->
+      <nav class="tabs-nav" aria-label="页面模块切换">
+        <button class="tab-btn" data-tab="models" id="tab-models-nav">
+          <span>🚗 车型参考库</span>
+          <span class="tab-count" id="tab-count-models">15</span>
+        </button>
+        <button class="tab-btn active" data-tab="waterfall" id="tab-waterfall-nav">
+          <span>🌊 闲鱼车源瀑布流</span>
+          <span class="tab-count" id="tab-count-items">21</span>
+        </button>
+      </nav>
+
+      <!-- 辅助功能入口 -->
+      <div class="header-actions">
+        <button class="btn-secondary" id="btn-show-excluded" title="查看已主动排查排除的踩坑车源">
+          <span>🛡️ 避坑黑榜</span>
+        </button>
+        <button class="btn-secondary" id="btn-show-checklist" title="查看二手推车现场面交验车步骤">
+          <span>🔍 验车清单</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主体内容区 -->
+  <main class="main-container">
+
+    <!-- 顶部概览数据横幅 -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <h2>
+          <span>好孩子国产中高端推车 · 长沙闲鱼淘车手册</span>
+          <span class="hero-tag">2026-09 最新快照</span>
+        </h2>
+        <p class="hero-desc">
+          严格淘汰当年实际新车长期低于 ¥1000 的入门低端车型（如 D619/D628/GB101 等），专选研发成本高、车架扎实但二手折价率极高的高端平台。带你用入门伞车的预算，淘到旗舰级碳纤维与大座舱好车。
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-val"><span id="stat-models-count">15</span> 款</div>
+            <div class="stat-lbl">官方中高端收录车型</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val"><span id="stat-items-count">21</span> 辆</div>
+            <div class="stat-lbl">长沙本地精选真实在售</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">¥150–600</div>
+            <div class="stat-lbl">首批超值重点蹲守区间</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-val">6+ 辆</div>
+            <div class="stat-lbl">已主动排查排除避坑车源</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Tab 1: 车型参考库
+         ==================================================================== -->
+    <section id="tab-pane-models" class="tab-pane">
+      <!-- 车型库控制栏 -->
+      <div class="controls-bar">
+        <div class="filters-row">
+          <div class="filter-group" id="models-filter-chips">
+            <span class="filter-label">推荐档位:</span>
+            <button class="filter-chip active" data-tier="all">全部车型</button>
+            <button class="filter-chip" data-tier="tier1">🥇 第一档 · 强烈推荐蹲</button>
+            <button class="filter-chip" data-tier="tier2">🥈 第二档 · 合适值得买</button>
+            <button class="filter-chip" data-tier="tier3">🥉 第三档 · 极低价才入</button>
+            <button class="filter-chip" data-tier="carbon">碳纤维超轻</button>
+            <button class="filter-chip" data-tier="wide">40cm加宽座舱</button>
+            <button class="filter-chip" data-tier="pocket">登机口袋折叠</button>
+          </div>
+
+          <div class="search-sort-group">
+            <div class="search-box">
+              <span class="search-icon">🔎</span>
+              <input type="text" id="model-search-input" placeholder="搜索型号、卖点、材质（如 GB826、碳纤维）..." />
+            </div>
+          </div>
+        </div>
+
+        <div class="results-summary">
+          <span>共收录 <strong id="models-count-display">15</strong> 款中高端代表车型，点击任意卡片查看全量产品参数、官方卖点文案与闲鱼合理估价。</span>
+        </div>
+      </div>
+
+      <!-- 车型卡片列表容器 -->
+      <div class="models-grid" id="models-grid-container">
+        <!-- 由 app.js 动态渲染 -->
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         Tab 2: 闲鱼车源瀑布流
+         ==================================================================== -->
+    <section id="tab-pane-waterfall" class="tab-pane active">
+      <!-- 车源瀑布流控制栏 -->
+      <div class="controls-bar">
+        <div class="filters-row">
+          <div class="filter-group" id="waterfall-model-chips">
+            <span class="filter-label">车型系列:</span>
+            <button class="filter-chip active" data-model="all">全部车型</button>
+            <button class="filter-chip" data-model="gb826">Swan 金羽 GB826</button>
+            <button class="filter-chip" data-model="e5011">安全舱2号 E5011</button>
+            <button class="filter-chip" data-model="c826">蜂鸟 C826</button>
+            <button class="filter-chip" data-model="pocket">POCKIT 口袋车</button>
+            <button class="filter-chip" data-model="others">其他车源</button>
+          </div>
+
+          <div class="filter-group" id="waterfall-status-chips">
+            <span class="filter-label">推荐优先级:</span>
+            <button class="filter-chip active" data-status="all">全部状态</button>
+            <button class="filter-chip" data-status="优先看">🌟 优先看</button>
+            <button class="filter-chip" data-status="可考虑">👍 可考虑</button>
+            <button class="filter-chip" data-status="议价备选">💬 议价备选</button>
+            <button class="filter-chip" data-status="待核实">🔍 待核实</button>
+          </div>
+        </div>
+
+        <div class="filters-row" style="margin-top: 0.25rem;">
+          <div class="filter-group">
+            <span class="filter-label">长沙区域:</span>
+            <select class="sort-select" id="district-select">
+              <option value="all">📍 全长沙所有区域</option>
+              <option value="雨花区">雨花区 (省植物园 / 绿地新都会)</option>
+              <option value="天心区">天心区 (九峰 / 友谊路)</option>
+              <option value="开福区">开福区 (四方坪等)</option>
+              <option value="望城区">望城区</option>
+              <option value="岳麓区">岳麓区 (洋湖宜家等)</option>
+              <option value="芙蓉区">芙蓉区</option>
+              <option value="区县待核">长沙·区县待核</option>
+            </select>
+
+            <span class="filter-label" style="margin-left: 0.75rem;">排序方式:</span>
+            <select class="sort-select" id="sort-select">
+              <option value="default">综合推荐顺位 (优先看优先)</option>
+              <option value="price-asc">挂牌价格：由低到高 (捡漏)</option>
+              <option value="price-desc">挂牌价格：由高到低</option>
+            </select>
+          </div>
+
+          <div class="search-box" style="max-width: 320px;">
+            <span class="search-icon">🔎</span>
+            <input type="text" id="item-search-input" placeholder="搜索标题、自提地点或卖家自述..." />
+          </div>
+        </div>
+
+        <div class="results-summary">
+          <span>当前筛选出 <strong id="waterfall-count-display">21</strong> 辆长沙本地精选二手车源。点击卡片可查看实车描述、验车砍价指南并直接跳转闲鱼购买。</span>
+          <span style="font-size: 0.75rem; color: #94a3b8;">* 建议优先选择支持同城面交验车的自提车源</span>
+        </div>
+      </div>
+
+      <!-- 瀑布流容器 -->
+      <div class="waterfall-container" id="waterfall-container">
+        <!-- 由 app.js 动态渲染 -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 全局模态弹窗容器 -->
+  <div class="modal-overlay" id="generic-modal-overlay">
+    <div id="modal-container">
+      <!-- 动态注入弹窗内容 -->
+    </div>
+  </div>
+
+  <!-- 页脚说明 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        <strong>好孩子 / gb 中高端二手婴儿车（长沙选购手册）</strong> · 独立非官方消费者导购指南
+      </p>
+      <p>
+        数据快照：2026年9月8日。车型参数整理自历史真实发售规格，二手商品价格与实物成色以闲鱼卖家页面为准。本站点非好孩子品牌官网、非闲鱼官方，不自动同步库存变更。
+      </p>
+      <p>
+        安全提示：二手婴儿推车涉及儿童出行安全，强烈建议优先选择长沙同城面交，并对照《现场验车清单》测试刹车、折叠与车架结构。
+      </p>
+    </div>
+  </footer>
+
+  <!-- 数据与脚本引入 -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
