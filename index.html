@@ -3,214 +3,256 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>好孩子 / gb 中高端二手婴儿车选购指南 · 长沙闲鱼精选车源</title>
-  <meta name="description" content="好孩子/gb国产婴儿车中高端二手选购全景指南。收录Swan金羽GB826、安全舱2号E5011、蜂鸟C826、ORSA及POCKIT口袋车全参数与卖点，汇聚长沙本地21辆闲鱼真实精选车源，附避坑黑榜与现场验车指南。" />
-  <meta name="keywords" content="好孩子二手婴儿车,gb推车,长沙闲鱼二手推车,GB826,E5011,蜂鸟C826,POCKIT口袋车,婴儿车选购指南" />
-  <link rel="stylesheet" href="style.css" />
+  <title>长沙母婴好物 · 中高端二手推车与实木婴儿床淘货指南</title>
+  <meta name="description" content="专为长沙本地家庭打造的中高端二手母婴大件淘货手册。涵盖好孩子/gb中高端推车（Swan金羽、安全舱2号、蜂鸟等）与全实木多功能婴儿床（Stokke、Boori、蒂爱、好孩子等）精选车源床源，附验货避坑清单与闲鱼直达。" />
+  <link rel="stylesheet" href="stroller/style.css" />
+  <style>
+    .portal-hero {
+      text-align: center;
+      padding: 3rem 1.5rem 2rem;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+    .portal-hero h1 {
+      font-size: 2.2rem;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 0.85rem;
+    }
+    .portal-hero p {
+      font-size: 1.05rem;
+      color: #475569;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.75rem;
+      max-width: 1080px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+    .portal-card {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      border-radius: 20px;
+      padding: 2rem 1.75rem;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 30px -10px rgba(13, 148, 136, 0.15);
+      border-color: rgba(13, 148, 136, 0.5);
+    }
+    .portal-card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .portal-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .portal-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .portal-card-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      margin-top: 0.2rem;
+    }
+    .portal-desc {
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .portal-stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 0.75rem;
+      gap: 0.5rem;
+      text-align: center;
+    }
+    .p-stat-val {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #0d9488;
+    }
+    .p-stat-lbl {
+      font-size: 0.7rem;
+      color: #64748b;
+    }
+    .portal-btn {
+      margin-top: auto;
+      background: linear-gradient(135deg, #0d9488, #0f766e);
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 10px rgba(13, 148, 136, 0.25);
+      transition: all 0.2s ease;
+    }
+    .portal-card:hover .portal-btn {
+      background: linear-gradient(135deg, #0f766e, #115e59);
+    }
+    @media (max-width: 640px) {
+      .portal-hero {
+        padding: 2rem 1rem 1.5rem;
+      }
+      .portal-hero h1 {
+        font-size: 1.5rem;
+      }
+      .portal-hero p {
+        font-size: 0.88rem;
+      }
+      .portal-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 0.5rem;
+      }
+      .portal-card {
+        padding: 1.25rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- 顶部导航栏 -->
+  <!-- 顶部导航 -->
   <header class="site-header">
-    <div class="header-inner">
+    <div class="header-inner" style="justify-content: center;">
       <div class="brand-group">
-        <div class="brand-icon">🍼</div>
+        <div class="brand-icon">🌟</div>
         <div class="brand-text">
-          <h1>好孩子 / gb 婴儿车指南 <span class="badge-location">📍 长沙精选</span></h1>
-          <div class="brand-subtitle">
-            <span>中高端二手选购</span> · <span>淘车避坑速查</span>
-          </div>
+          <h1>长沙二手母婴大件淘货指南 <span class="badge-location">📍 长沙精选</span></h1>
         </div>
-      </div>
-
-      <!-- 双 Tab 切换控制器 -->
-      <nav class="tabs-nav" aria-label="页面模块切换">
-        <button class="tab-btn" data-tab="models" id="tab-models-nav">
-          <span>🚗 车型参考库</span>
-          <span class="tab-count" id="tab-count-models">15</span>
-        </button>
-        <button class="tab-btn active" data-tab="waterfall" id="tab-waterfall-nav">
-          <span>🌊 闲鱼车源瀑布流</span>
-          <span class="tab-count" id="tab-count-items">21</span>
-        </button>
-      </nav>
-
-      <!-- 辅助功能入口 -->
-      <div class="header-actions">
-        <button class="btn-secondary" id="btn-show-excluded" title="查看已主动排查排除的踩坑车源">
-          <span>🛡️ 避坑黑榜</span>
-        </button>
-        <button class="btn-secondary" id="btn-show-checklist" title="查看二手推车现场面交验车步骤">
-          <span>🔍 验车清单</span>
-        </button>
       </div>
     </div>
   </header>
 
-  <!-- 主体内容区 -->
-  <main class="main-container">
+  <main class="main-container" style="max-width: 1100px;">
+    <!-- 欢迎大标题 -->
+    <div class="portal-hero">
+      <h1>拒绝廉价劣质，用零头预算<br />淘中高端二手好车好床</h1>
+      <p>
+        专为长沙本地宝妈宝爸打造。坚决淘汰原价低于千元的入门低端货，精选好孩子、Stokke、Boori 等高研发成本大厂经典平台，结合长沙本地闲鱼真实货源与避坑实战指导。
+      </p>
+    </div>
 
-    <!-- 顶部概览数据横幅 -->
-    <section class="hero-banner">
-      <div class="hero-content">
-        <h2>
-          <span>好孩子国产中高端推车 · 长沙闲鱼淘车手册</span>
-          <span class="hero-tag">2026-09 最新快照</span>
-        </h2>
-        <p class="hero-desc">
-          严格淘汰当年实际新车长期低于 ¥1000 的入门低端车型（如 D619/D628/GB101 等），专选研发成本高、车架扎实但二手折价率极高的高端平台。带你用入门伞车的预算，淘到旗舰级碳纤维与大座舱好车。
+    <!-- 导航双卡片 -->
+    <div class="portal-grid">
+      
+      <!-- 卡片 1: 婴儿推车指南 -->
+      <a href="stroller/" class="portal-card">
+        <div class="portal-card-header">
+          <div class="portal-icon" style="background: linear-gradient(135deg, #0d9488, #2563eb); color: white;">
+            🍼
+          </div>
+          <div>
+            <h2 class="portal-card-title">好孩子 / gb 婴儿推车指南</h2>
+            <span class="portal-card-badge" style="background: #ccfbf1; color: #0f766e;">15款经典中高端 · 21辆长沙现车</span>
+          </div>
+        </div>
+
+        <p class="portal-desc">
+          锁定 Swan 金羽（7.2kg碳纤维）、安全舱2号（40cm大座舱）、ORSA、飞羽及蜂鸟经典高阶路线。淘汰入门杂牌，百元预算入手旗舰级好车。
         </p>
-        <div class="hero-stats">
-          <div class="stat-item">
-            <div class="stat-val"><span id="stat-models-count">15</span> 款</div>
-            <div class="stat-lbl">官方中高端收录车型</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val"><span id="stat-items-count">21</span> 辆</div>
-            <div class="stat-lbl">长沙本地精选真实在售</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">¥150–600</div>
-            <div class="stat-lbl">首批超值重点蹲守区间</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-val">6+ 辆</div>
-            <div class="stat-lbl">已主动排查排除避坑车源</div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- ====================================================================
-         Tab 1: 车型参考库
-         ==================================================================== -->
-    <section id="tab-pane-models" class="tab-pane">
-      <!-- 车型库控制栏 -->
-      <div class="controls-bar">
-        <div class="filters-row">
-          <div class="filter-group" id="models-filter-chips">
-            <span class="filter-label">推荐档位:</span>
-            <button class="filter-chip active" data-tier="all">全部车型</button>
-            <button class="filter-chip" data-tier="tier1">🥇 第一档 · 强烈推荐蹲</button>
-            <button class="filter-chip" data-tier="tier2">🥈 第二档 · 合适值得买</button>
-            <button class="filter-chip" data-tier="tier3">🥉 第三档 · 极低价才入</button>
-            <button class="filter-chip" data-tier="carbon">碳纤维超轻</button>
-            <button class="filter-chip" data-tier="wide">40cm加宽座舱</button>
-            <button class="filter-chip" data-tier="pocket">登机口袋折叠</button>
+        <div class="portal-stats-row">
+          <div>
+            <div class="p-stat-val">15 款</div>
+            <div class="p-stat-lbl">官方车型库</div>
           </div>
-
-          <div class="search-sort-group">
-            <div class="search-box">
-              <span class="search-icon">🔎</span>
-              <input type="text" id="model-search-input" placeholder="搜索型号、卖点、材质（如 GB826、碳纤维）..." />
-            </div>
+          <div>
+            <div class="p-stat-val">21 辆</div>
+            <div class="p-stat-lbl">长沙精选车源</div>
+          </div>
+          <div>
+            <div class="p-stat-val">¥199 起</div>
+            <div class="p-stat-lbl">超值捡漏价</div>
           </div>
         </div>
 
-        <div class="results-summary">
-          <span>共收录 <strong id="models-count-display">15</strong> 款中高端代表车型，点击任意卡片查看全量产品参数、官方卖点文案与闲鱼合理估价。</span>
+        <div class="portal-btn">
+          进入婴儿推车选购指南 →
         </div>
-      </div>
+      </a>
 
-      <!-- 车型卡片列表容器 -->
-      <div class="models-grid" id="models-grid-container">
-        <!-- 由 app.js 动态渲染 -->
-      </div>
-    </section>
-
-    <!-- ====================================================================
-         Tab 2: 闲鱼车源瀑布流
-         ==================================================================== -->
-    <section id="tab-pane-waterfall" class="tab-pane active">
-      <!-- 车源瀑布流控制栏 -->
-      <div class="controls-bar">
-        <div class="filters-row">
-          <div class="filter-group" id="waterfall-model-chips">
-            <span class="filter-label">车型系列:</span>
-            <button class="filter-chip active" data-model="all">全部车型</button>
-            <button class="filter-chip" data-model="gb826">Swan 金羽 GB826</button>
-            <button class="filter-chip" data-model="e5011">安全舱2号 E5011</button>
-            <button class="filter-chip" data-model="c826">蜂鸟 C826</button>
-            <button class="filter-chip" data-model="pocket">POCKIT 口袋车</button>
-            <button class="filter-chip" data-model="others">其他车源</button>
+      <!-- 卡片 2: 婴儿床指南 -->
+      <a href="crib/" class="portal-card">
+        <div class="portal-card-header">
+          <div class="portal-icon" style="background: linear-gradient(135deg, #059669, #d97706); color: white;">
+            🛏️
           </div>
-
-          <div class="filter-group" id="waterfall-status-chips">
-            <span class="filter-label">推荐优先级:</span>
-            <button class="filter-chip active" data-status="all">全部状态</button>
-            <button class="filter-chip" data-status="优先看">🌟 优先看</button>
-            <button class="filter-chip" data-status="可考虑">👍 可考虑</button>
-            <button class="filter-chip" data-status="议价备选">💬 议价备选</button>
-            <button class="filter-chip" data-status="待核实">🔍 待核实</button>
+          <div>
+            <h2 class="portal-card-title">中高端实木婴儿床指南</h2>
+            <span class="portal-card-badge" style="background: #fef3c7; color: #92400e;">12款全实木经典 · 20张长沙好床</span>
           </div>
         </div>
 
-        <div class="filters-row" style="margin-top: 0.25rem;">
-          <div class="filter-group">
-            <span class="filter-label">长沙区域:</span>
-            <select class="sort-select" id="district-select">
-              <option value="all">📍 全长沙所有区域</option>
-              <option value="雨花区">雨花区 (省植物园 / 绿地新都会)</option>
-              <option value="天心区">天心区 (九峰 / 友谊路)</option>
-              <option value="开福区">开福区 (四方坪等)</option>
-              <option value="望城区">望城区</option>
-              <option value="岳麓区">岳麓区 (洋湖宜家等)</option>
-              <option value="芙蓉区">芙蓉区</option>
-              <option value="区县待核">长沙·区县待核</option>
-            </select>
+        <p class="portal-desc">
+          严拒密度板甲醛与非标卡头隐患！精选 Stokke 蛋形床、Boori 澳洲实木、好孩子无漆拼接大床、蒂爱德国榉木等，专柜数千元品质两三百拿下。
+        </p>
 
-            <span class="filter-label" style="margin-left: 0.75rem;">排序方式:</span>
-            <select class="sort-select" id="sort-select">
-              <option value="default">综合推荐顺位 (优先看优先)</option>
-              <option value="price-asc">挂牌价格：由低到高 (捡漏)</option>
-              <option value="price-desc">挂牌价格：由高到低</option>
-            </select>
+        <div class="portal-stats-row">
+          <div>
+            <div class="p-stat-val" style="color: #d97706;">12 款</div>
+            <div class="p-stat-lbl">全实木床型</div>
           </div>
-
-          <div class="search-box" style="max-width: 320px;">
-            <span class="search-icon">🔎</span>
-            <input type="text" id="item-search-input" placeholder="搜索标题、自提地点或卖家自述..." />
+          <div>
+            <div class="p-stat-val" style="color: #d97706;">20 张</div>
+            <div class="p-stat-lbl">长沙精选好床</div>
+          </div>
+          <div>
+            <div class="p-stat-val" style="color: #d97706;">¥110 起</div>
+            <div class="p-stat-lbl">实木捡漏价</div>
           </div>
         </div>
 
-        <div class="results-summary">
-          <span>当前筛选出 <strong id="waterfall-count-display">21</strong> 辆长沙本地精选二手车源。点击卡片可查看实车描述、验车砍价指南并直接跳转闲鱼购买。</span>
-          <span style="font-size: 0.75rem; color: #94a3b8;">* 建议优先选择支持同城面交验车的自提车源</span>
+        <div class="portal-btn" style="background: linear-gradient(135deg, #d97706, #b45309);">
+          进入实木婴儿床指南 →
         </div>
-      </div>
+      </a>
 
-      <!-- 瀑布流容器 -->
-      <div class="waterfall-container" id="waterfall-container">
-        <!-- 由 app.js 动态渲染 -->
-      </div>
-    </section>
-
+    </div>
   </main>
 
-  <!-- 全局模态弹窗容器 -->
-  <div class="modal-overlay" id="generic-modal-overlay">
-    <div id="modal-container">
-      <!-- 动态注入弹窗内容 -->
-    </div>
-  </div>
-
-  <!-- 页脚说明 -->
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>
-        <strong>好孩子 / gb 中高端二手婴儿车（长沙选购手册）</strong> · 独立非官方消费者导购指南
-      </p>
-      <p>
-        数据快照：2026年9月8日。车型参数整理自历史真实发售规格，二手商品价格与实物成色以闲鱼卖家页面为准。本站点非好孩子品牌官网、非闲鱼官方，不自动同步库存变更。
-      </p>
-      <p>
-        安全提示：二手婴儿推车涉及儿童出行安全，强烈建议优先选择长沙同城面交，并对照《现场验车清单》测试刹车、折叠与车架结构。
-      </p>
+      <p><strong>长沙二手母婴大件淘货指南</strong> · 独立非官方消费者导购手册</p>
+      <p>数据快照：2026年9月8日。闲鱼二手货源由编辑人工筛选，优先推荐长沙同城面交验货。</p>
     </div>
   </footer>
 
-  <!-- 数据与脚本引入 -->
-  <script src="data.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
