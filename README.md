@@ -2,8 +2,9 @@
 
 > 专为长沙本地家庭打造的好孩子（gb）中高端二手婴儿推车选购指南与闲鱼真实车源精选。
 
-🌐 **在线访问地址（GitHub Pages）**：  
-👉 [https://forrestsocool.github.io/changsha-stroller-guide/](https://forrestsocool.github.io/changsha-stroller-guide/)
+🌐 **在线访问地址**：  
+👉 **独立子域名（自有服务器反代）**：[https://stroller.sensen.li/](https://stroller.sensen.li/)  
+👉 **GitHub Pages 原始链接**：[https://forrestsocool.github.io/changsha-stroller-guide/](https://forrestsocool.github.io/changsha-stroller-guide/)
 
 ---
 
