@@ -709,7 +709,7 @@ function openItemModal(itemId) {
 
         <div class="modal-section">
           <div style="font-size: 0.75rem; color: #94a3b8; line-height: 1.4;">
-            * 温馨提示：价格与成色均源自闲鱼卖家 2026-09-08 挂牌信息。二手童车非标品，请务必在闲鱼平台进行安全交易，优先面交验货。
+            * 温馨提示：价格与成色均源自闲鱼卖家 2026-09-09 挂牌信息。二手童车非标品，请务必在闲鱼平台进行安全交易，优先面交验货。
           </div>
         </div>
       </div>
