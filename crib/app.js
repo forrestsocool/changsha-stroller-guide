@@ -25,6 +25,7 @@ const Device = {
   isMobile() {
     const ua = navigator.userAgent || '';
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(ua) ||
+           (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1) ||
            (window.innerWidth <= 768 && ('ontouchstart' in window || navigator.maxTouchPoints > 0));
   },
   isIOS() {
@@ -65,12 +66,12 @@ function openXianyuItem(itemId, fallbackWebUrl, e) {
 
   showToast('🚀 正在尝试调起闲鱼 App...');
 
-  // 闲鱼常用协议 Scheme
-  const primaryScheme = `fleamarket://itemDetail?itemId=${itemId}`;
+  // 闲鱼商品详情 Scheme；awesome_detail 是当前 App 常见的详情路由。
+  const primaryScheme = `fleamarket://awesome_detail?itemId=${encodeURIComponent(itemId)}`;
 
   if (Device.isAndroid()) {
     // Android 端：使用 Chrome Intent 协议规范，未安装自动跳转 S.browser_fallback_url
-    const androidIntent = `intent://itemDetail?itemId=${itemId}#Intent;scheme=fleamarket;package=com.taobao.idlefish;S.browser_fallback_url=${encodeURIComponent(h5Url)};end`;
+    const androidIntent = `intent://awesome_detail?itemId=${encodeURIComponent(itemId)}#Intent;scheme=fleamarket;package=com.taobao.idlefish;S.browser_fallback_url=${encodeURIComponent(h5Url)};end`;
     const start = Date.now();
     window.location.href = androidIntent;
 
@@ -476,7 +477,7 @@ function renderWaterfallItems() {
           <div class="item-card-footer">
             <span class="item-model-pill">${modelName}</span>
             <span class="btn-item-link" onclick="openXianyuItem('${item.id}', '${item.url}', event)" title="直接前往闲鱼查看">
-              ${Device.isMobile() ? '调起闲鱼 ↗' : '闲鱼直达 ↗'}
+              ${Device.isMobile() ? '打开闲鱼 App ↗' : '新标签页打开闲鱼 ↗'}
             </span>
           </div>
         </div>
@@ -699,9 +700,8 @@ function openItemModal(itemId) {
 
       <div class="modal-footer">
         <button class="btn-secondary" onclick="copyItemLink('${item.url}')">复制链接 📋</button>
-        <button class="btn-secondary" onclick="window.open('${item.url}', '_blank', 'noopener,noreferrer')">浏览器打开 🌐</button>
         <button class="btn-primary" onclick="openXianyuItem('${item.id}', '${item.url}', event)">
-          ${Device.isMobile() ? '🚀 调起闲鱼 App' : '前往闲鱼查看 / 购买 ↗'}
+          ${Device.isMobile() ? '🚀 打开闲鱼 App' : '↗ 新标签页打开闲鱼'}
         </button>
       </div>
     </div>
