@@ -1,5 +1,5 @@
 /**
- * 中高端实木多功能婴儿床（长沙闲鱼选购指南）- 交互应用逻辑
+ * ¥200以内婴儿床（长沙闲鱼选购指南）- 交互应用逻辑
  */
 
 // 全局应用状态
@@ -377,12 +377,16 @@ function renderWaterfallItems() {
   let filtered = items.filter(item => {
     // 品牌/床型筛选
     if (state.itemFilterModel !== 'all') {
-      if (state.itemFilterModel === 'stokke' && item.model !== 'stokke_sleepi') return false;
-      if (state.itemFilterModel === 'boori' && item.model !== 'boori_classic') return false;
-      if (state.itemFilterModel === 'gb' && item.model !== 'gb_mc828' && item.model !== 'xiaolong_lmy') return false;
-      if (state.itemFilterModel === 'diidee' && item.model !== 'diidee_beech') return false;
-      if (state.itemFilterModel === 'ikea' && item.model !== 'ikea_gulliver') return false;
-      if (state.itemFilterModel === 'others' && (item.model === 'stokke_sleepi' || item.model === 'boori_classic' || item.model === 'gb_mc828' || item.model === 'xiaolong_lmy' || item.model === 'diidee_beech' || item.model === 'ikea_gulliver')) return false;
+      const bedInBedModels = ['comfortbao', 'diidee', 'lovemami', 'bedinbed_mix'];
+      const rockingModels = ['rocking_wood', 'mengbaole'];
+      const foldingModels = ['folding_generic', 'valdera', 'coolbaby', 'saors'];
+      const joinModels = ['sepeon', 'goodbaby', 'bscr', 'generic_join', 'generic_wood', 'baileke', 'taifuxi'];
+      if (state.itemFilterModel === 'bedinbed' && !bedInBedModels.includes(item.model)) return false;
+      if (state.itemFilterModel === 'rocking' && !rockingModels.includes(item.model)) return false;
+      if (state.itemFilterModel === 'folding' && !foldingModels.includes(item.model)) return false;
+      if (state.itemFilterModel === 'join' && !joinModels.includes(item.model)) return false;
+      if (state.itemFilterModel === 'wood' && !['sepeon', 'goodbaby', 'bscr', 'saors', 'generic_wood', 'baileke', 'taifuxi', 'mengbaole', 'generic_join'].includes(item.model)) return false;
+      if (state.itemFilterModel === 'other' && ['sepeon', 'goodbaby', 'bscr', 'saors', 'generic_wood', 'baileke', 'taifuxi', 'mengbaole', 'generic_join', ...bedInBedModels, ...rockingModels, ...foldingModels, ...joinModels].includes(item.model)) return false;
     }
 
     // 区域筛选
@@ -441,7 +445,7 @@ function renderWaterfallItems() {
 
   container.innerHTML = filtered.map(item => {
     const matchedModel = models.find(m => m.id === item.model) || null;
-    const modelName = matchedModel ? matchedModel.name : '中高端实木婴儿床';
+    const modelName = matchedModel ? matchedModel.name : '长沙婴儿床车源';
 
     return `
       <article class="waterfall-card" onclick="openItemModal('${item.id}')" title="点击查看这套床源详情">
@@ -617,7 +621,7 @@ function openItemModal(itemId) {
   if (!item) return;
 
   const matchedModel = models.find(m => m.id === item.model);
-  const modelName = matchedModel ? matchedModel.name : '中高端婴儿床';
+  const modelName = matchedModel ? matchedModel.name : '长沙婴儿床车源';
 
   const modalContainer = document.getElementById('modal-container');
   modalContainer.innerHTML = `
